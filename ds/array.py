@@ -1,10 +1,12 @@
 # READ
 def read(array, index):
+    # O(1)
     return array[index]
 
 
 # LINEAR SEARCH
 def search(array, value):
+    # O(n)
     for i in range(len(array)):
         if array[i] == value:
             return i
@@ -13,6 +15,7 @@ def search(array, value):
 
 # INSERT
 def insert(array, item, index):
+    # O(n)
     array = array[:] + [None]
     # move elements to the right by one to make room for new item
     for i in range(len(array) - 1, index, -1):
@@ -22,11 +25,13 @@ def insert(array, item, index):
 
 
 def pythonic_insert(array, item, index):
+    # O(n)
     return array[:index] + [item] + array[index:]
 
 
 # DELETE
 def delete(array, index):
+    # O(n)
     array = array[:]
     for i in range(index, len(array) - 1):
         array[i] = array[i + 1]
@@ -35,6 +40,7 @@ def delete(array, index):
 
 
 def pythonic_delete(array, index):
+    # O(n)
     return array[:index] + array[index + 1 :]
 
 
