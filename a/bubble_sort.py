@@ -1,4 +1,5 @@
 def bubble_sort(array: list):
+    array = array[:]  # added for speed checks to prevent mutability errors
     unsorted_until_index = len(array) - 1
     sorted = False
 
@@ -13,6 +14,7 @@ def bubble_sort(array: list):
 
 
 if __name__ == "__main__":
+    # Tests
     assert bubble_sort([3, 2, 1]) == [1, 2, 3]
     assert bubble_sort([1]) == [1]
     assert bubble_sort([]) == []

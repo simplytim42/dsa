@@ -32,7 +32,7 @@ def pythonic_insert(array, item, index):
 # DELETE
 def delete(array, index):
     # O(n)
-    array = array[:]
+    array = array[:]  # added for speed checks to prevent mutability errors
     for i in range(index, len(array) - 1):
         array[i] = array[i + 1]
     del array[len(array) - 1]
@@ -45,8 +45,8 @@ def pythonic_delete(array, index):
 
 
 if __name__ == "__main__":
+    # Tests
     array = ["red", "green", "blue"]
-
     assert read(array, 1) == "green"
     assert search(array, "blue") == 2
     assert search(array, "does not exist") == -1
@@ -55,6 +55,7 @@ if __name__ == "__main__":
     assert delete(array, 1) == ["red", "blue"]
     assert pythonic_delete(array, 1) == ["red", "blue"]
 
+    # Speed Comaprisons
     import timeit
 
     print("insert: ", timeit.timeit(lambda: insert(array, "orange", 1), number=100000))
