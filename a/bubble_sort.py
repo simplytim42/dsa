@@ -1,5 +1,4 @@
 def bubble_sort(array: list):
-    array = array[:]  # added for speed checks to prevent mutability errors
     unsorted_until_index = len(array) - 1
     sorted = False
 
