@@ -4,10 +4,12 @@ def bubble_sort(array: list):
 
     while not sorted:
         sorted = True
+
         for i in range(unsorted_until_index):
             if array[i] > array[i + 1]:
                 sorted = False
                 array[i], array[i + 1] = array[i + 1], array[i]
+
         unsorted_until_index -= 1
     return array
 
